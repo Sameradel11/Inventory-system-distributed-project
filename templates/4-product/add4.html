@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Edit Product</title>
+    <title>Add Product</title>
 </head>
 <body>
     <section class="content-add">
@@ -15,34 +15,46 @@
                 <div class="left-add">
                     <ul class="breadcrumb-add">
                         <li>
-                            <a href="index4.html">Description</a>
+                            <a href="index4.html">Propduct</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a href="#">Add Description</a>
+                            <a href="#">Add Product</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="form-container">
-                <form id="editForm" action="" method="">
+                <form id="editForm" action="" method="POST">
+                    {% csrf_token %}
                     <!-- Replace update_data.php with the actual server-side script to handle the update -->
 
-                    <label for="productId">Product ID:</label>
-                    <input type="text" id="productId" name="productId" readonly>
+
 
                     <label for="productName">Product Name:</label>
-                    <input type="text" id="productName" name="productName">
+                    <input type="text" id="name" name="name">
 
                     <label for="productDescription">Description:</label>
-                    <textarea id="productDescription" name="productDescription"></textarea>
+                    <textarea id="description" name="description"></textarea>
 
                     <label for="productPrice">Price:</label>
-                    <input type="text" id="productPrice" name="productPrice">
+                    <input type="text" id="price" name="price">
 
-   
-                    <!-- Add other fields as needed -->
+                    <label for="productPrice">Stock:</label>
+                    <input type="text" id="stock" name="stock">
+
+                    <label for="productPrice">Inventory:</label>
+                    <input type="text" id="inventory" name="inventory" list="inventory-list">
+
+                    <datalist id="inventory-list">
+                        
+                        {% for inv in inventories %}
+                            <option>{{ inv.location.name}}</option>
+                        {% endfor %}
+                            
+                    </datalist>
+                    
 
                     <button type="submit">Add Description</button>
                 </form>

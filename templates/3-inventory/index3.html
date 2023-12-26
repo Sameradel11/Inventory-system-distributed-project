@@ -24,7 +24,7 @@
 			<span class="text">Inventory System</span>
 		</a>
 		<ul class="side-menu top">
-			<li >
+			<li>
 				<a href="{% url 'db_table' %}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">joined tables</span>
@@ -36,22 +36,16 @@
 					<span class="text">Location</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="{% url 'inventory' %}">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">inventory</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="{% url 'product' %}">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">product</span>
-				</a>
-			</li>
-			<li>
-				<a href="{% url 'product_inventory' %}">
-					<i class='bx bxs-group' ></i>
-					<span class="text">	product inventory </span>
 				</a>
 			</li>
 		</ul>
@@ -112,10 +106,10 @@
 							<td>{{ inventory.location.address }}</td>
 							<td>{{ inventory.modification_date }}</td>
 							<td>
-								<a href="update2.html"><i class="fas fa-edit"></i></a>
+								<a href="{% url 'inventory_update' inventory.inventory_id %}"><i class="fas fa-edit"></i></a>
 							</td>
 							<td>
-								<a href="delete.html"><i class="fas fa-trash-alt"></i></a>
+								<a href="{% url 'inventory_delete' inventory.inventory_id %}"><i class="fas fa-trash-alt"></i></a>
 							</td>
 								
 							</tr>
@@ -130,7 +124,7 @@
 				
 			</div>
 			<div class="add-btn">
-				<a href="add3.html">
+				<a href="{% url 'inventory_add' %}">
 				  <i class="fas fa-plus-circle" ></i> Add New Row
 				</a>
 			</div>

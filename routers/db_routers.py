@@ -86,3 +86,45 @@ class Site2:
         if app_label =='site2':
             return db == "site2"
         return None
+
+# routers.py
+
+class AdminRouter:
+    """
+    A router to control all database operations on models used by the admin site.
+    """
+
+    def db_for_read(self, model, **hints):
+        """
+        Attempts to read models used by the admin site from the 'server1' database.
+        """
+        if model._meta.app_label == 'admin':
+            return 'server1'
+        return None
+
+    def db_for_write(self, model, **hints):
+        """
+        Attempts to write models used by the admin site to the 'server1' database.
+        """
+        if model._meta.app_label == 'admin':
+            return 'server1'
+        return None
+
+    def allow_relation(self, obj1, obj2, **hints):
+        """
+        Allow relations if both objects are part of the admin site.
+        """
+        if (
+            obj1._meta.app_label == 'admin'
+            and obj2._meta.app_label == 'admin'
+        ):
+            return True
+        return None
+
+    def allow_migrate(self, db, app_label, model_name=None, **hints):
+        """
+        Make sure the admin app only appears in the 'server1' database.
+        """
+        if app_label == 'admin':
+            return db == 'server1'
+        return None

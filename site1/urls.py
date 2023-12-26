@@ -25,24 +25,23 @@ urlpatterns = [
         # URLs for page 2
     path('location/', views.location, name='location'),
     path('location/add/', views.location_add, name='location_add'),
-    path('location/update/', views.location_update, name='location_update'),
+    path('location/update/<str:pk>', views.location_update, name='location_update'),
+    path('location/delete/<str:pk>',views.location_delete,name='location_delete'),
 
         # URLs for page 3
     path('inventory/', views.inventory, name='inventory'),
     path('inventory/add/', views.inventory_add, name='inventory_add'),
-    path('inventory/update/', views.inventory_update, name='inventory_update'),
+    path('inventory/update/<str:pk>', views.inventory_update, name='inventory_update'),
+    path('inventory/delete/<str:pk>',views.inventory_delete,name='inventory_delete'),
 
         # URLs for page 4 - Product folder
     path('product/', views.product, name='product'),
     path('product/add/', views.product_add, name='product_add'),
-    path('product/update/', views.product_update, name='product_update'),
-
-        # URLs for page 5 - ProductInventory folder
-    path('productinventory/', views.product_inventory, name='product_inventory'),
-    path('productinventory/add/', views.product_inventory_add, name='product_inventory_add'),
-    path('productinventory/update/', views.product_inventory_update, name='product_inventory_update'),
+    path('product/update/<str:pk>', views.product_update, name='product_update'),
+    path('product/delete/<str:pk>',views.product_delete,name='product_delete'),
 
 
+    path('productinventory_add/<str:pk>',views.product_inventory_add, name='product_inventory_add'),
     path('',views.home,name='home'),
     path('login/',views.login,name='login'),
     path('signup/',views.signup,name='signup'),

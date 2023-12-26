@@ -75,7 +75,8 @@ WSGI_APPLICATION = 'distributed.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {},
+    'default': {            
+    },
     'server1':{
             'ENGINE': 'mssql',
             'HOST': 'DESKTOP-B6F3DM0\SERVER1',
@@ -130,6 +131,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASE_ROUTERS=['routers.db_routers.Site1',
-                    'routers.db_routers.Site2']
+                    'routers.db_routers.Site2','routers.db_routers.AdminRouter',]
             
 STATICFILES_DIRS = [BASE_DIR / "static"]

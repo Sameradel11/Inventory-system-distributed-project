@@ -15,31 +15,31 @@
                 <div class="left-add">
                     <ul class="breadcrumb-add">
                         <li>
-                            <a href="index3.html">Modification</a>
+                            <a href="index3.html">Inventory</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>
-                            <a href="#">Add Modification</a>
+                            <a href="#">Add Inventory</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="form-container">
-                <form id="editForm" action="" method="">
+                <form id="editForm" action="" method="POST">
+                    {% csrf_token %}
                     <!-- Replace update_data.php with the actual server-side script to handle the update -->
 
-                    <label for="productId">ID:</label>
-                    <input type="text" id="productId" name="productId" readonly>
 
-                    <label for="productName">Location ID</label>
-                    <input type="text" id="productName" name="productName">
-
-          
-         
+                    <label for="location">Location </label>
+                    <input type="text" id="location" name="location" list="locations-list">
+                    <datalist id="locations-list">
+                        {% for location in  locations %}
+                            <option>{{ location.name }}</option>
+                        {% endfor %}
+                    </datalist>
                     <!-- Add other fields as needed -->
-
-                    <button type="submit">Add Modification</button>
+                    <button type="submit">Add Inventory</button>
                 </form>
             </div>
         </main>
