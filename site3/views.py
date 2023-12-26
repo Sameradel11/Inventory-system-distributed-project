@@ -35,13 +35,11 @@ def location_add(request):
             address=request.POST.get('address')
         )
         location.save(using='server3')
-        
         return redirect('site3:location')
     return render(request, 'site3/2-location/add2.html')
 
 def location_update(request,pk):
     location = get_object_or_404(Location3.objects.using('server3'),location_id=pk)
-
     if request.method=="POST":
         location.name = request.POST.get("productName")
         location.address = request.POST.get("productDescription")

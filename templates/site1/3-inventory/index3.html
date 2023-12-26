@@ -103,7 +103,7 @@
 							
 							{% for inventory in inventories  %}
 							<td>{{ inventory.inventory_id }}</td>
-							<td>{{ inventory.location.address }}</td>
+							<td>{{ inventory.location }}</td>
 							<td>{{ inventory.modification_date }}</td>
 							<td>
 								<a href="{% url 'site1:inventory_update' inventory.inventory_id %}"><i class="fas fa-edit"></i></a>
