@@ -34,7 +34,7 @@
                     <input type="text" id="inventory" name="inventory" list="inventory-list">
                     <datalist id="inventory-list">
                         {% for inv in inventories %}
-                            <h1>Exist</h1>
+                            <option>{{ inv.location }}</option>
                         {% endfor %}
                     
                     </datalist>

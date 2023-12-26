@@ -88,7 +88,12 @@ def product_add(request):
     return render(request, '4-product/add4.html',context)
 
 def product_inventory_add(request,pk):
-    inventories=Productinventory1.objects.all().using('server1')
+    if request.method=="POST":
+        product=get_object_or_404(Product1.objects.using('server1'),product_id=pk)
+        inv=Inventory1.objects.using('server1').filter(location__name=request.POST.get('inventory'))
+        prodinv=Productinventory1(product=product,inventory_id=inv[0])
+        prodinv.save(using='server1')
+    inventories=Inventory1.objects.all().using('server1')
     context={'inventories':inventories}
     return render(request,'4-product/add_inventory.html',context)
 
