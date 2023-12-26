@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">	{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Edit Product</title>
+</head>
+<body>
+    <section class="content-add">
+        <main>
+            <div class="head-title-add">
+                <div class="left-add">
+                    <ul class="breadcrumb-add">
+                        <li>
+                            <a href="index4.html">Description</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li>
+                            <a href="#">Add Description</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="editForm" action="" method="">
+                    <!-- Replace update_data.php with the actual server-side script to handle the update -->
+
+                    <label for="productId">Product ID:</label>
+                    <input type="text" id="productId" name="productId" readonly>
+
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName">
+
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription"></textarea>
+
+                    <label for="productPrice">Price:</label>
+                    <input type="text" id="productPrice" name="productPrice">
+
+   
+                    <!-- Add other fields as needed -->
+
+                    <button type="submit">Add Description</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

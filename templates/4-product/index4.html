@@ -1,0 +1,144 @@
+<!DOCTYPE html>	{% load static %}
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+	<title>Inventory System</title>
+</head>
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Inventory System</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="{% url 'db_table' %}">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">joined tables</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'location' %}">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Location</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'inventory' %}">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">inventory</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="{% url 'product' %}">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">product</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'product_inventory' %}">
+					<i class='bx bxs-group' ></i>
+					<span class="text">	product inventory </span>
+				</a>
+			</li>
+		</ul>
+		
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>		
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">product</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+
+			
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Description</h3>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Product ID</th>
+								<th>Product Name</th>
+								<th>Description</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>Update</th>
+								<th>Delete</th>
+							  </tr>
+						</thead>
+						<tbody>
+							{% for product in products  %}
+							<tr>
+								
+								<td>{{ product.product_id }}</td>
+								<td>{{ product.product_name }}</td>
+								<td>{{ product.describe }}</td>
+								<td>{{ product.price }}</td>
+								<td>{{ product.quantity }}</td>
+								<td>
+									<a href="update4.html"><i class="fas fa-edit"></i></a>
+								</td>
+								<td>
+									<a href="delete.html"><i class="fas fa-trash-alt"></i></a>
+								</td>
+							  </tr>
+								{% endfor %}
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="add-btn">
+				<a href="add4.html">
+				  <i class="fas fa-plus-circle" ></i> Add New Row
+				</a>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

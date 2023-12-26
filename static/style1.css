@@ -1,0 +1,68 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("best-inventory-management-software.webp");
+    background-size: cover;
+    height: 100vh; 
+}
+
+header {
+    background-color: #f0f0f0;
+    color: #fff;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 60px;
+    width: 60px; 
+}
+
+.linkss {
+    display: flex;
+}
+
+.linkss a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #1389ea;
+    margin-left: 70px;
+    padding-right: 10px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content:  flex-start;
+    align-items: center; 
+    height: 80vh;
+}
+
+.intro-text {
+    color: #fff;
+    max-width: 60%;
+    padding: 8px; 
+}
+
+.intro-text h1 {
+    font-size: 36px;
+}
+
+.intro-text p {
+    font-size: 18px;
+}
+
+.dashboard-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 22px;
+    text-decoration: none;
+    background-color: #fff; 
+    color: #1389ea;
+    border: 2px solid #1389ea; 
+    border-radius: 5px;
+}
