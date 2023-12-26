@@ -25,25 +25,25 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a href="{% url 'site1:db_table' %}">
+				<a href="{% url 'site3:db_table' %}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">joined tables</span>
 				</a>
 			</li>
 			<li class="active">
-				<a href="{% url 'site1:location' %}">
+				<a href="{% url 'site3:location' %}">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Location</span>
 				</a>
 			</li>
 			<li>
-				<a href="{% url 'site1:inventory' %}">
+				<a href="{% url 'site3:inventory' %}">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">inventory</span>
 				</a>
 			</li>
 			<li>
-				<a href="{% url 'site1:product' %}">
+				<a href="{% url 'site3:product' %}">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">product</span>
 				</a>
@@ -105,11 +105,11 @@
 									<td>{{ location.name }}</td>
 									<td>{{ location.address }}</td>
 									<td>
-										<a href="{% url 'site1:location_update' location.location_id %}"><i class="fas fa-edit"></i></a>
+										<a href="{% url 'site3:location_update' location.location_id %}"><i class="fas fa-edit"></i></a>
 									</td>
 
 									<td>
-										<a href="{% url 'site1:location_delete' location.location_id %}"><i class="fas fa-trash-alt"></i></a>
+										<a href="{% url 'site3:location_delete' location.location_id %}"><i class="fas fa-trash-alt"></i></a>
 									</td>
 								  </tr>
 								  <tr>
@@ -122,7 +122,7 @@
 				
 			</div>
 			<div class="add-btn">
-				<a href="{% url 'site1:location_add' %}">
+				<a href="{% url 'site3:location_add' %}">
 				  <i class="fas fa-plus-circle" ></i> Add New Row
 				</a>
 			</div>

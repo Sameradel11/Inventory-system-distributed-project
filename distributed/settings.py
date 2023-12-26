@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'site1','site2'
+    'site1','site2','site3'
 ]
 
 MIDDLEWARE = [
@@ -151,6 +151,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASE_ROUTERS=['routers.db_routers.Site1',
-                    'routers.db_routers.Site2']
+                    'routers.db_routers.Site2',
+                    'routers.db_routers.Site3']
             
 STATICFILES_DIRS = [BASE_DIR / "static"]
