@@ -26,22 +26,24 @@
             </div>
 
             <div class="form-container">
-                <form id="editForm" action="" method="">
+                <form id="editForm" action="" method="POST">
+                    {% csrf_token %}
                     <!-- Replace update_data.php with the actual server-side script to handle the update -->
 
-                    <label for="productId">Product ID:</label>
-                    <input type="text" id="productId" name="productId" readonly>
+
 
                     <label for="productName">Product Name:</label>
-                    <input type="text" id="productName" name="productName">
+                    <input type="text" id="productName" name="productName" value="{{ product.product_name }}">
 
                     <label for="productDescription">Description:</label>
-                    <textarea id="productDescription" name="productDescription"></textarea>
+                    <input type="text" id="productDescription" name="productDescription" value="{{ product.describe }}">
 
                     <label for="productPrice">Price:</label>
-                    <input type="text" id="productPrice" name="productPrice">
+                    <input type="text" id="productPrice" name="productPrice" value=" {{ product.price }} ">
 
-   
+                    <label for="productPrice">Quantity:</label>
+                    <input type="text" id="productPrice" name="productPrice" value="{{ product.quantity }}">
+
                     <!-- Add other fields as needed -->
 
                     <button type="submit">Edit Description</button>
