@@ -108,19 +108,23 @@
 								<td>{{ product.describe }}</td>
 								<td>{{ product.price }}</td>
 								<td>{{ product.quantity }}</td>
+									<td>
 								{% for inv in product.productinventory1_set.all %}
-									<td>{{ inv.inventory_id.location }}
-										
+
+										<P>{{ inv.inventory_id.location }}</P>
+										<p>
 										{% if forloop.last %}
-										<a href="{% url 'product_inventory_add' product.product_id %}">
-											<i class="fas fa-plus-circle" ></i>
-										</a>
-										{% endif %}
 										
+											<a href="{% url 'product_inventory_add' product.product_id %}">
+												<i class="fas fa-plus-circle" ></i>
+											</a>
+										
+										{% endif %}
+									</p>
+								{% endfor %}
 										
 									</td>
 									
-								{% endfor %}
 									
 								<td>
 									<a href="{% url 'product_update' product.product_id %}"><i class="fas fa-edit"></i></a>
