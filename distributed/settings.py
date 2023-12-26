@@ -87,6 +87,26 @@ DATABASES = {
                 'driver': 'ODBC Driver 17 for SQL Server',
                 },
             },
+    'server2':{
+            'ENGINE': 'mssql',
+            'HOST': 'DESKTOP-B6F3DM0\SERVER2',
+            'NAME': 'site2',
+            'USER': 'server2',
+            'PASSWORD': 'server2',
+            'OPTIONS': {
+                'driver': 'ODBC Driver 17 for SQL Server',
+                },
+            },
+    'server3':{
+            'ENGINE': 'mssql',
+            'HOST': 'DESKTOP-B6F3DM0\SERVER3',
+            'NAME': 'site3',
+            'USER': 'server3',
+            'PASSWORD': 'server3',
+            'OPTIONS': {
+                'driver': 'ODBC Driver 17 for SQL Server',
+                },
+            },
 }
 
 
@@ -131,6 +151,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASE_ROUTERS=['routers.db_routers.Site1',
-                    'routers.db_routers.Site2','routers.db_routers.AdminRouter',]
+                    'routers.db_routers.Site2']
             
 STATICFILES_DIRS = [BASE_DIR / "static"]

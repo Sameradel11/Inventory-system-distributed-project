@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">	{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Add Inventory</title>
+</head>
+<body>
+    <section class="content-add">
+        <main>
+            <div class="head-title-add">
+                <div class="left-add">
+                    <ul class="breadcrumb-add">
+                        <li>
+                            <a href="index4.html">Propduct</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li>
+                            <a href="#">Add Inventory</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="editForm" action="" method="POST">
+                    {% csrf_token %}
+                    <!-- Replace update_data.php with the actual server-side script to handle the update -->
+
+                    <label for="productPrice">Inventory:</label>
+                    <input type="text" id="inventory" name="inventory" list="inventory-list">
+                    <datalist id="inventory-list">
+                        {% for inv in inventories %}
+                            <option>{{ inv.location }}</option>
+                        {% endfor %}
+                    
+                    </datalist>
+
+                    <button type="submit">Add Description</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

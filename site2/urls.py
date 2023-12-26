@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-app_name='site1'
+app_name='site2'
 
 urlpatterns = [
     path('db/', views.db_table, name='db_table'),
